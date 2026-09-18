@@ -1,0 +1,902 @@
+/* =========================================================
+   ADD INVENTORY MODAL
+========================================================= */
+
+.inventory-modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(3px);
+
+    animation: inventoryOverlayIn 0.2s ease-out;
+}
+
+
+/* =========================================================
+   OVERLAY ANIMATION
+========================================================= */
+
+@keyframes inventoryOverlayIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.inventory-modal {
+    width: 100%;
+    max-width: 520px;
+
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.20);
+
+    animation: inventoryModalIn 0.22s ease-out;
+}
+
+
+/* =========================================================
+   MODAL ANIMATION
+========================================================= */
+
+@keyframes inventoryModalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.modal-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #eef2f7;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.modal-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: #2563eb;
+}
+
+
+.modal-title svg {
+
+    flex-shrink: 0;
+
+    width: 22px;
+    height: 22px;
+}
+
+
+.modal-title h2 {
+
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.modal-header > div > p {
+
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.modal-close-btn {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.modal-close-btn:hover {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    transform: rotate(3deg);
+}
+
+
+.modal-close-btn:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.inventory-modal form {
+
+    padding: 24px;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.modal-error {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 9px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.45;
+}
+
+
+.modal-error svg {
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+
+.form-group:last-of-type {
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.form-group label span {
+
+    margin-left: 4px;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   SELECT + INPUT
+========================================================= */
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    min-height: 44px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+.form-group select:hover {
+
+    border-color: #94a3b8;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-group input::placeholder {
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.form-group input:disabled,
+.form-group select:disabled {
+
+    background: #f8fafc;
+
+    color: #94a3b8;
+
+    cursor: not-allowed;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.form-loading {
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NO ITEMS
+========================================================= */
+
+.no-items-message {
+
+    padding: 12px 13px;
+
+    border: 1px solid #fde68a;
+
+    border-radius: 9px;
+
+    background: #fffbeb;
+
+    color: #92400e;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   HELPER TEXT
+========================================================= */
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   QUANTITY INPUT
+========================================================= */
+
+.quantity-input {
+
+    display: flex;
+
+    align-items: stretch;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.quantity-input:focus-within {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   QUANTITY INPUT FIELD
+========================================================= */
+
+.quantity-input input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 44px;
+
+    padding: 11px 13px;
+
+    border: none;
+
+    outline: none;
+
+    box-shadow: none;
+
+    background: transparent;
+}
+
+
+.quantity-input input:focus {
+
+    border: none;
+
+    outline: none;
+
+    box-shadow: none;
+}
+
+
+/* Remove number arrows */
+
+.quantity-input input::-webkit-outer-spin-button,
+.quantity-input input::-webkit-inner-spin-button {
+
+    margin: 0;
+
+    -webkit-appearance: none;
+}
+
+
+.quantity-input input[type="number"] {
+
+    -moz-appearance: textfield;
+}
+
+
+/* =========================================================
+   UNIT DISPLAY
+========================================================= */
+
+.quantity-input span {
+
+    min-width: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 12px;
+
+    border-left: 1px solid #e2e8f0;
+
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.modal-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 26px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eef2f7;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.cancel-btn,
+.submit-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 135px;
+
+    min-height: 42px;
+
+    padding: 10px 17px;
+
+    box-sizing: border-box;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.cancel-btn {
+
+    border: 1px solid #dbe2ea;
+
+    background: #ffffff;
+
+    color: #475569;
+}
+
+
+.cancel-btn:hover {
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+}
+
+
+.cancel-btn:active {
+
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.submit-btn {
+
+    border: 1px solid #2563eb;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.18);
+}
+
+
+.submit-btn:hover {
+
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.24);
+}
+
+
+.submit-btn:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   DISABLED BUTTONS
+========================================================= */
+
+.cancel-btn:disabled,
+.submit-btn:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.inventory-modal::-webkit-scrollbar {
+
+    width: 7px;
+}
+
+
+.inventory-modal::-webkit-scrollbar-track {
+
+    background: #f8fafc;
+}
+
+
+.inventory-modal::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background: #cbd5e1;
+}
+
+
+.inventory-modal::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .inventory-modal-overlay {
+
+        padding: 15px;
+    }
+
+    .inventory-modal {
+
+        max-width: 100%;
+
+        max-height: calc(100vh - 30px);
+
+        border-radius: 14px;
+    }
+
+    .modal-header {
+
+        padding: 18px;
+    }
+
+    .inventory-modal form {
+
+        padding: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .inventory-modal-overlay {
+
+        align-items: center;
+
+        padding: 10px;
+    }
+
+    .inventory-modal {
+
+        max-height: calc(100vh - 20px);
+
+        border-radius: 12px;
+    }
+
+    .modal-header {
+
+        padding: 16px;
+
+        gap: 10px;
+    }
+
+    .modal-title {
+
+        gap: 8px;
+    }
+
+    .modal-title h2 {
+
+        font-size: 18px;
+    }
+
+    .modal-header > div > p {
+
+        font-size: 12px;
+    }
+
+    .inventory-modal form {
+
+        padding: 16px;
+    }
+
+    .form-group {
+
+        margin-bottom: 17px;
+    }
+
+    .modal-actions {
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+
+        gap: 9px;
+    }
+
+    .cancel-btn,
+    .submit-btn {
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .inventory-modal-overlay {
+
+        padding: 6px;
+    }
+
+    .modal-header {
+
+        padding: 14px;
+    }
+
+    .inventory-modal form {
+
+        padding: 14px;
+    }
+
+    .modal-title h2 {
+
+        font-size: 17px;
+    }
+
+    .modal-close-btn {
+
+        width: 31px;
+        height: 31px;
+    }
+
+    .form-group label {
+
+        font-size: 13px;
+    }
+
+}

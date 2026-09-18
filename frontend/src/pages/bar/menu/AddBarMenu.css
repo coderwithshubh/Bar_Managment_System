@@ -1,0 +1,569 @@
+/* =========================================================
+   ADD BAR MENU PAGE
+========================================================= */
+
+.add-bar-menu-page {
+    width: 100%;
+    min-height: 100%;
+    padding: 10px 4px 40px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.add-bar-menu-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 22px;
+    padding: 7px 0;
+
+    border: none;
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.add-bar-menu-back:hover {
+    color: #2563eb;
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.add-bar-menu-header {
+    margin-bottom: 25px;
+}
+
+.add-bar-menu-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.add-bar-menu-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+.add-bar-menu-title h1 {
+    margin: 0 0 5px;
+
+    color: #172033;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.add-bar-menu-title p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.add-bar-menu-error {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 20px;
+
+    padding: 13px 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.add-bar-menu-card {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.add-bar-menu-section {
+    padding: 30px;
+}
+
+.add-bar-menu-section + .add-bar-menu-section {
+    border-top: 1px solid #eef2f7;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.add-bar-menu-section-header {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.section-number {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.add-bar-menu-section-header h2 {
+    margin: 0 0 3px;
+
+    color: #1e293b;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.add-bar-menu-section-header p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.add-bar-menu-field {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 22px;
+}
+
+.add-bar-menu-field:last-child {
+    margin-bottom: 0;
+}
+
+.add-bar-menu-field label {
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-bar-menu-field label > span {
+    margin-left: 4px;
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.add-bar-menu-field input,
+.add-bar-menu-field select,
+.add-bar-menu-field textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.add-bar-menu-field input:focus,
+.add-bar-menu-field select:focus,
+.add-bar-menu-field textarea:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.10);
+}
+
+.add-bar-menu-field input::placeholder,
+.add-bar-menu-field textarea::placeholder {
+    color: #94a3b8;
+}
+
+.add-bar-menu-field textarea {
+    min-height: 110px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+.add-bar-menu-field input:disabled,
+.add-bar-menu-field select:disabled,
+.add-bar-menu-field textarea:disabled {
+    background: #f8fafc;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   HELP
+========================================================= */
+
+.add-bar-menu-field > small {
+    margin-top: 6px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.field-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 6px;
+}
+
+.field-footer small {
+    margin: 0;
+
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.field-footer span {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.add-bar-menu-two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.add-bar-menu-toggle {
+    display: inline-flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 !important;
+
+    cursor: pointer;
+}
+
+.add-bar-menu-toggle input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: relative;
+
+    width: 46px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    background: #cbd5e1;
+
+    transition: 0.2s ease;
+}
+
+.toggle-slider::after {
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.2);
+
+    transition: 0.2s ease;
+}
+
+.add-bar-menu-toggle input:checked
++ .toggle-slider {
+    background: #16a34a;
+}
+
+.add-bar-menu-toggle input:checked
++ .toggle-slider::after {
+    transform: translateX(21px);
+}
+
+.toggle-label {
+    margin: 0 !important;
+
+    color: #334155 !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.add-bar-menu-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding: 20px 30px;
+
+    background: #f8fafc;
+
+    border-top: 1px solid #eef2f7;
+}
+
+.add-bar-menu-cancel,
+.add-bar-menu-save {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 140px;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.add-bar-menu-cancel {
+    border: 1px solid #dbe2ea;
+
+    background: #ffffff;
+
+    color: #475569;
+}
+
+.add-bar-menu-cancel:hover {
+    background: #f8fafc;
+}
+
+.add-bar-menu-save {
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.20);
+}
+
+.add-bar-menu-save:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.add-bar-menu-cancel:disabled,
+.add-bar-menu-save:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .add-bar-menu-page {
+        padding: 5px 0 30px;
+    }
+
+    .add-bar-menu-title {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .add-bar-menu-icon {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 13px;
+
+        font-size: 21px;
+    }
+
+    .add-bar-menu-title h1 {
+        font-size: 23px;
+    }
+
+    .add-bar-menu-title p {
+        font-size: 13px;
+    }
+
+    .add-bar-menu-card {
+        border-radius: 13px;
+    }
+
+    .add-bar-menu-section {
+        padding: 22px 18px;
+    }
+
+    .add-bar-menu-two-column {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .add-bar-menu-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+
+        padding: 18px;
+    }
+
+    .add-bar-menu-cancel,
+    .add-bar-menu-save {
+        width: 100%;
+    }
+}
