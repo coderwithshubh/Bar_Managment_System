@@ -1,10 +1,23 @@
-const API_BASE_URL = "http://localhost:8081/api/auth";
+// =========================================================
+// API BASE URL
+// =========================================================
+// Production backend
+// Works on:
+// - Desktop
+// - Mobile
+// - Vercel deployed frontend
+// =========================================================
+
+const API_BASE_URL =
+    "https://barmanagmentsystem-production-231c.up.railway.app/api/auth";
+
 
 // =========================================================
 // RESPONSE PARSER
 // =========================================================
 
 const parseResponse = async (response) => {
+
     const contentType =
         response.headers.get("content-type") || "";
 
@@ -21,8 +34,11 @@ const parseResponse = async (response) => {
             .includes("application/json")
     ) {
         try {
+
             return JSON.parse(responseText);
+
         } catch {
+
             return {
                 message: responseText.trim()
             };
@@ -108,6 +124,7 @@ const createNetworkError = (error) => {
 export const loginUser = async (loginData) => {
 
     if (!loginData) {
+
         throw new Error(
             "Login information is required."
         );
@@ -117,12 +134,14 @@ export const loginUser = async (loginData) => {
         !loginData.email ||
         !loginData.email.trim()
     ) {
+
         throw new Error(
             "Email is required."
         );
     }
 
     if (!loginData.password) {
+
         throw new Error(
             "Password is required."
         );
@@ -183,6 +202,7 @@ export const loginUser = async (loginData) => {
     }
 
     if (!data) {
+
         throw new Error(
             "The server returned an empty response."
         );
@@ -201,6 +221,7 @@ export const registerUser = async (
 ) => {
 
     if (!registerData) {
+
         throw new Error(
             "Registration information is required."
         );
@@ -271,6 +292,7 @@ export const updateProfile = async (
     // ------------------------------------------
 
     if (!profileData) {
+
         throw new Error(
             "Profile information is required."
         );
@@ -280,6 +302,7 @@ export const updateProfile = async (
         !profileData.fullName ||
         !profileData.fullName.trim()
     ) {
+
         throw new Error(
             "Full name is required."
         );
@@ -289,6 +312,7 @@ export const updateProfile = async (
         !profileData.email ||
         !profileData.email.trim()
     ) {
+
         throw new Error(
             "Email is required."
         );
@@ -298,6 +322,7 @@ export const updateProfile = async (
         !profileData.mobileNumber ||
         !profileData.mobileNumber.trim()
     ) {
+
         throw new Error(
             "Mobile number is required."
         );
@@ -311,6 +336,7 @@ export const updateProfile = async (
         sessionStorage.getItem("token");
 
     if (!token) {
+
         throw new Error(
             "Your session has expired. Please login again."
         );
@@ -321,6 +347,7 @@ export const updateProfile = async (
     // ------------------------------------------
 
     const requestBody = {
+
         fullName:
             profileData.fullName.trim(),
 
@@ -332,10 +359,6 @@ export const updateProfile = async (
         mobileNumber:
             profileData.mobileNumber.trim()
     };
-
-    // ------------------------------------------
-    // Send request
-    // ------------------------------------------
 
     let response;
 
@@ -349,7 +372,8 @@ export const updateProfile = async (
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
-                    "Authorization": `Bearer ${token}`
+                    "Authorization":
+                        `Bearer ${token}`
                 },
 
                 body: JSON.stringify(
@@ -367,10 +391,6 @@ export const updateProfile = async (
 
         throw createNetworkError(error);
     }
-
-    // ------------------------------------------
-    // Parse response
-    // ------------------------------------------
 
     const data =
         await parseResponse(response);
@@ -416,6 +436,7 @@ export const updateProfile = async (
     // ------------------------------------------
 
     if (data.token) {
+
         sessionStorage.setItem(
             "token",
             data.token
@@ -434,14 +455,18 @@ export const updateProfile = async (
     if (currentUser) {
 
         try {
+
             userData =
                 JSON.parse(currentUser);
+
         } catch {
+
             userData = {};
         }
     }
 
     const updatedUser = {
+
         ...userData,
 
         id:
@@ -503,13 +528,16 @@ export const forgotPassword = async (
         !email ||
         !email.trim()
     ) {
+
         throw new Error(
             "Email is required."
         );
     }
 
     const cleanEmail =
-        email.trim().toLowerCase();
+        email
+            .trim()
+            .toLowerCase();
 
     let response;
 
@@ -577,13 +605,16 @@ export const resetPassword = async ({
         !email ||
         !email.trim()
     ) {
+
         throw new Error(
             "Email is required."
         );
     }
 
     const cleanEmail =
-        email.trim().toLowerCase();
+        email
+            .trim()
+            .toLowerCase();
 
     // ------------------------------------------
     // Validate OTP
@@ -593,6 +624,7 @@ export const resetPassword = async ({
         !token ||
         !token.trim()
     ) {
+
         throw new Error(
             "OTP is required."
         );
@@ -616,6 +648,7 @@ export const resetPassword = async ({
         !newPassword ||
         !newPassword.trim()
     ) {
+
         throw new Error(
             "New password is required."
         );
@@ -636,6 +669,7 @@ export const resetPassword = async ({
         !confirmPassword ||
         !confirmPassword.trim()
     ) {
+
         throw new Error(
             "Confirm password is required."
         );
@@ -645,6 +679,7 @@ export const resetPassword = async ({
         newPassword !==
         confirmPassword
     ) {
+
         throw new Error(
             "New password and confirm password do not match."
         );
@@ -655,9 +690,13 @@ export const resetPassword = async ({
     // ------------------------------------------
 
     const requestBody = {
+
         email: cleanEmail,
+
         token: cleanToken,
+
         newPassword: newPassword,
+
         confirmPassword: confirmPassword
     };
 
